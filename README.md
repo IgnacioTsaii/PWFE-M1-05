@@ -1,5 +1,5 @@
-#Mi Primer Proyecto con Gt 
-A partir de ahora vas a tener control de todos los cambios y actualizaciones de ti proyecto
+# Mi Primer Proyecto con Git
+A partir de ahora vas a tener control de todos los cambios y actualizaciones de tu proyecto
 ## En caso de incendio: 
 1. git commit 
 2. git push 
