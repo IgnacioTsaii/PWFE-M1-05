@@ -1,4 +1,4 @@
-# Mi Primer Proyecto con Git 
+# Mi Primer Proyecto con Git
 A partir de ahora vas a tener control de todos los cambios y actualizaciones de tu proyecto.
 ## En caso de incendio: 
 1. git commit 
