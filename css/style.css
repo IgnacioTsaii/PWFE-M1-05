@@ -7,9 +7,8 @@ selector {
 	}
 */
 *{
-	outline: dotted 1px red;
+	outline: dotted 1px red !important;
 }
-
 body { 
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 14px;
@@ -60,6 +59,7 @@ header ul {
 header ul li {
 	display: inline-block;
 }
+
 #noticias-destacadas img { /* <-- refiere a un elemento con id="noticias-destacadas" --> */
 	width: 100%;
 	display: block;
@@ -67,16 +67,49 @@ header ul li {
 #noticias-destacadas figure {
 	margin: 0;
 }
-	
 #noticias-destacadas h2{
 	background-color: #333;
 	color: #FFF;
 	font-size: 32px;
 	padding: 20px;	
 }
+.noticia {
+	display: flex;
+	flex-direction: row;
+	align-items: center;/* flex-start | center | flex-end */
+	justify-content: space-around; /* flex-start | center | flex-end | space-around | space-between */
+	
+	border-bottom: solid 1px #CCC;
+	padding: 20px 0;
+	margin: 0 20px; 
+}
+.noticia:last-child {
+	border: none;
+}
 .noticia-img {
-	width: 35%;
+	width: 30%;
 }
 .noticia-txt {
-	width: 70%;
+	width: 60%;
+}
+.noticia-txt h3, 
+.noticia-txt p, 
+.noticia-txt blockquote {
+	margin: 25px 0;	/*	margin-top: 10px; margin-bottom: 10px;*/
+	line-height: 1.5;
+}
+.noticia-txt h3{
+	font-weight: 700;
+	font-size: 28px;
+
+}
+.noticia-txt p a {
+	color: #000;
+	font-weight: 700;
+}
+.noticia-txt blockquote, p a{
+	font-size: 15px;
+}
+#tabla-posiciones table {
+	margin: auto;
 }
