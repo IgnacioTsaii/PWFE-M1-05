@@ -156,3 +156,34 @@ footer {
 	margin-top: 20px;
 }
 
+@media screen /*o puede ser print*/ and (min-width: 320px) and (max-width:480px) {
+/* Comienzo*/
+	header h1 {
+		font-size: 24px;
+		padding-left: 55px;
+	}
+	header nav {
+		display: block;
+		float: none;
+		clear: both;
+	}
+	header nav li {
+		display: block;
+	}
+	header button {
+		margin: 0;
+		padding: 5;
+		color: #FFF;
+		border: none;
+		float: right;
+		background-color: transparent;
+		font-size: 20px;
+		line-height: 1;
+		font-weight: bold;
+	}
+	header button:focus + nav {
+		display: block;
+
+	}
+/*final*/	
+}
