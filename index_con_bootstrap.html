@@ -7,40 +7,51 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <title>DX-mobile</title>
 
-    <title>Hello, world!</title>
+    <style>
+      body {
+        font-family: "Raleway", sans-serif,
+      }
+    </style>
   </head>
-  
+
   <body>
 
 <!-- Inicio de menú -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">DeporteXtremo</a>
+    <a class="navbar-brand" href="#">
+      <img src="img/logo.png">
+    DeporteXtremo
+  </a>
+
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
       <div class="collapse navbar-collapse" id="menu">
         <ul class="navbar-nav text-center">
           <li class="nav-item ">
-            <a class="nav-link" href="#">Fútbol</a>
+            <a class="nav-link" href="#"><i class="far fa-futbol"></i> Fútbol</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">NBA</a>
+            <a class="nav-link" href="#"><i class="far fa-basketball-ball"></i> NBA</a>
           </li>
            <li class="nav-item">
-            <a class="nav-link" href="#">Tenis</a>
+            <a class="nav-link" href="#"><i class="fas fa-baseball-ball"></i> Tenis</a>
            </li> 
           <li class="nav-item">
-            <a class="nav-link" href="#">Fórmula 1</a>      
+            <a class="nav-link" href="#"><i class="fas fa-flag-checkered"></i> Fórmula 1</a>      
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Boxéo</a>
+            <a class="nav-link" href="#"><i class="far fa-hand-rock"></i> Boxéo</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">JJOO</a>
+            <a class="nav-link" href="#"><i class="fas fa-medal"></i> JJOO</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Moto GP</a>
+            <a class="nav-link" href="#"><i class="fas fa-motorcycle"></i> Moto GP</a>
           </li>
         </ul>
       </div>
@@ -56,13 +67,13 @@
         </div>
     </div>
     <div class="carousel-item">
-      <img src="img/juegos-olimpicos.jpg" class="d-block w-100" alt="...">
+      <img src="img/Ricciardo.jpg" class="d-block w-100" alt="...">
         <div class="carousel-caption bg-dark position-static text-left p-3">
           <h2>Ricciardo marcó el ritmo en los libres de Azerbaiyán</h2>
         </div>
     </div>
     <div class="carousel-item">
-      <img src="img/juegos-olimpicos.jpg" class="d-block w-100" alt="...">
+      <img src="img/Rally.jpg" class="d-block w-100" alt="...">
         <div class="carousel-caption bg-dark position-static text-left p-3">
           <h2>En Córdoba arrancó la 1er etapa del 38° Rally de la Argentina</h2>
         </div>
@@ -78,22 +89,81 @@
   </a>
 </div>
 <!--Fin Slider -->  
-    <div class="container-fluid"> <!-- El priemr div -->
 
-     <div class="row"> 
-      <!-- Comienzo de Noticia -->
-      <div class="col-12 col-md-4">
+    <main class="container-fluid"> <!-- El priemr div --> 
+
+      <!--Si quiero hacer las dos lineas de abajo mas rapido puedo escribir esto: div.row>div.col-12{Noticias #} (multiplicado las veces que queira) *2-->
+      <div class="row">
+
+        <div class="col-12 col-md-6 col-lg-12">
+<!--Noticia #1 -->
+     <article class="row Noticia"> 
+      <!-- Comienzo de Noticia #1 -->
+      <div class="col-12 col-lg-4">
         <img src="img/sorteo-libertadores.jpg" class="img-fluid">
       </div>
-      <div class="col-12 col-md-8">
+      <div class="col-12 col-lg-8">
         <h3>La tecnología llega a la actual edición de la Libertadores</h3>
-        <p>por Joaquín Angeli</p>
+        <p>por <strong>Joaquín Angeli</strong></p>
         <p>La Conmebol anunció la implementación del sistema VAR (asistencia arbitral por video) desde las semifinales de la actual Libertadores.</p>
       </div>
-      <!-- Fin Noticia -->
-     </div>
+      <!-- Fin Noticia #1 -->
+    </article>
+        </div>
 
-    </div> <!-- El cierre del primer div -->
+        <div class="col-12 col-md-6 col-lg-12">
+<!--Noticia #2 -->
+     <article class="row Noticia"> 
+      <!-- Comienzo de Noticia #2 -->
+      <div class="col-12 col-lg-4">
+        <img src="img/tickets-rusia-mundial.jpg" class="img-fluid">
+      </div>
+      <div class="col-12 col-lg-8">
+        <h3>Comenzó la venta de entradas para el Mundial de Rusia 2018</h3>
+        <p>por <strong>Laura Smasnatta</strong></p>
+        <p>Hoy se abrió la venta al público de tickets, a través del sitio oficial de la FIFA. El proceso se dividirá en dos partes y los espectadores deberán solicitar una tarjeta de hincha 'Fan ID'.</p>
+      </div>
+      <!-- Fin Noticia #2 -->
+     </article>
+        </div>
+      </div>
+
+      <div class="row">
+
+        <div class="col-12 col-md-6 col-lg-12">
+<!--Noticia #3 -->
+     <article class="row Noticia"> 
+      <!-- Comienzo de Noticia #3 -->
+      <div class="col-12 col-lg-4">
+        <img src="img/firpo.jpg" class="img-fluid">
+      </div>
+      <div class="col-12 col-lg-8">
+        <h3>A 94 años del derechazo que convirtió en leyenda a Luis Ángel Firpo</h3>
+        <p>por <strong>Diego Di Marco</strong></p>
+        <p>El 14/9/1923 el boxeador argentino enfrento en Nueva York a Jack Dempsey, uno de los mejores pesos pesados de la historia.</p>
+      </div>
+      <!-- Fin Noticia #3 -->
+     </article>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-12">
+<!--Noticia #4-->
+     <article class="row Noticia"> 
+      <!-- Comienzo de Noticia #4 -->
+      <div class="col-12 col-lg-4">
+        <img src="img/buenos-aires.jpg" class="img-fluid">
+      </div>
+      <div class="col-12 col-lg-8">
+        <h3>Buenos Aires 2018 presentó su innovador proyecto de parques y de ceremonia inaugural ante el COI</h3>
+        <p>por <strong>Melina Morales</strong></p>
+        <p>El Comité Organizador de los Juegos de la Juventud presentó su concepto de parques ante la 131a sesión del Comité Olímpico Internacional (COI) que se realizó en Lima. La ceremonia inaugural se realizará al aire libre.</p>
+      </div>
+      <!-- Fin Noticia #4 -->
+        </article>
+      </div>
+     
+
+    </main> <!-- El cierre del primer div -->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
