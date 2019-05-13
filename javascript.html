@@ -1,8 +1,22 @@
 <h1>Introduccion a JavaScript</h1>
+
+<button id="nuevo"> Nuevo Producto </button>
+
+<section id="listado-productos"></section>
+
+
+
 <script>
 	/* Introducción */
 	const iva = 1.21
 
+	document.querySelector("#nuevo").onclick = crearProducto
+
+
+////////////////////////////////////////////////////////////////////////////
+function crearProducto(){
+
+	/* Incicio función */
 	let nombre = prompt("Ingrese nombre:")
 	let stock = prompt("Ingrese stock:")
 	let precio = prompt("Ingrese precio:")
@@ -14,12 +28,13 @@
 	precio = precio * iva
 
 	//Si el producto esta disponible...
+	//if( precio > 100 && precio < 200 ){}
 	if( disponible == true ){
 		estado = "Producto disponible :)"
 		accion = `<button>Comprar</button>`
 	} else {
 		estado = "Producto NO disponible :("
-		accion = `<a href="#"> Recibir alerta cuando este disponible`
+		accion = `<a href="#"> Recibir alerta cuando este disponible</a>`
 	}
 
 	/* Desenlace */
@@ -32,7 +47,10 @@
 				<li>Estado: ${estado}</li>
 				<li>${accion}</li>
 			</ul>`
-	document.write(ficha)
+	//document.write(ficha)
+	document.querySelector("#listado-productos").innerHTML = ficha
+	/* Fin de la función */
+}
 
 </script>
 
