@@ -107,33 +107,36 @@
       
       //let noticia1 = lo que tengo en json queda aca, con los distintos tipos de noticias (1,2,3,4, etc).
       //let noticias = [bla bla bla ]
+      
       let ajax = new XMLHttpRequest ()
       ajax.open("GET", "noticias.json")
-      ajax.onload = mostrarNoticias
-      ajax.send()
-
-
-      function mostrarNoticias (){
+      ajax.onload = function(){
         
-        if( ajax.status == 200 ){ //<--! Respuesta Exitosa! 
+        if( ajax.status == 200 ){ //<-- Respuesta Exitosa! 
 
-          console.log( ajax.response )
+          let noticias = JSON.parse(ajax.response)
 
-        }
+          console.log("Después del parseo")
+          console.log( noticias )
 
-      }
+        /* Mostrar las noticias */
+           for(let i = 0; i < noticias.length; i++){
 
-      for(let i = 0; i < noticias.length; i++){
+              console.log(`voy  imprimir la noticia que esta en la posicion: ${i}`)
 
-        console.log(`voy  imprimir la noticia que esta en la posicion: ${i}`)
-
-        crearNoticia(noticias[i].titulo, noticias[i].autor, noticias[i].bajada, noticias[i].imagen)
-
-      }
+              crearNoticia(noticias[i].titulo, noticias[i].autor, noticias[i].bajada, noticias[i].imagen)
   
       //crearNoticia(noticia1.titulo, noticia1.autor, noticia1.bajada, noticia1.imagen)
       
       //crearNoticia(noticia#[0],noticia#[1],noticia#[2])
+        }
+        /* Fin de Mostrar noticias */
+
+      }
+
+    }
+     ajax.send()
+
   </script>
   </body>
 </html>
