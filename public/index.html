@@ -109,7 +109,7 @@
       //let noticias = [bla bla bla ]
       
       let ajax = new XMLHttpRequest ()
-      ajax.open("GET", "noticias.json")
+      ajax.open("GET", "https://api.sheety.co/8ba52fce-195d-442a-96c0-71c6698219d1")
       ajax.onload = function(){
         
         if( ajax.status == 200 ){ //<-- Respuesta Exitosa! 
@@ -119,17 +119,24 @@
           console.log("Después del parseo")
           console.log( noticias )
 
+          //return
+
         /* Mostrar las noticias */
-           for(let i = 0; i < noticias.length; i++){
+           /*for(let i = 0; i < noticias.items.length; i++){
 
               console.log(`voy  imprimir la noticia que esta en la posicion: ${i}`)
 
-              crearNoticia(noticias[i].titulo, noticias[i].autor, noticias[i].bajada, noticias[i].imagen)
-  
+              crearNoticia(noticias.items[i].title, noticias.items[i].author, noticias.items[i].description, noticias.items[i].enclosure.link)
+            }*/
       //crearNoticia(noticia1.titulo, noticia1.autor, noticia1.bajada, noticia1.imagen)
       
       //crearNoticia(noticia#[0],noticia#[1],noticia#[2])
-        }
+        
+        noticias.forEach(function (noticia) {
+          
+          crearNoticia(noticia.titulo, noticia.autor, noticia.detalle, noticia.imagen)
+
+        });
         /* Fin de Mostrar noticias */
 
       }

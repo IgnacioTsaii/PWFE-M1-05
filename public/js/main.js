@@ -4,7 +4,7 @@ function saludar(){
 function crearNoticia (titulo, autor, bajada, imagen){
 	let plantilla = `<article class="row Noticia"> 
                         <div class="col-12 col-lg-4">
-                          <img src="img/${imagen}" class="img-fluid">
+                          <img src="${imagen}" class="img-fluid">
                         </div>
 
                         <div class="col-12 col-lg-8">
