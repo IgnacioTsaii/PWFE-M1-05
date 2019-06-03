@@ -1,5 +1,6 @@
 const http = require("http");
 const fs = require("fs");
+const form = require("querystring")
 
 http.createServer(function(request, response){
 		
@@ -7,6 +8,21 @@ http.createServer(function(request, response){
 
 		let file = (request.url == "/") ? "index.html" : request.url;
 			file = (file.match(/[^.]+(\.[^?#]+)?/) || [])[0];
+
+		if( request.method == "POST" && file == "/enviar" ){
+			//ACA HAY QUE LEER LOS DATOS QUE MANDO EL FORMULARIO
+
+			request.on("data", function(datos){
+
+				datos = datos.toString()
+
+				datos = form.parse( datos )
+
+				response.end ( JSON.stringify(datos) )
+			})
+
+			//response.end("Se supone que ya leí los datos ¿?")
+		}
 		
 		let ext = file.substring( file.lastIndexOf(".") ).toLowerCase();
 
@@ -43,4 +59,4 @@ http.createServer(function(request, response){
 
 		});
 
-}).listen(4000);
+}).listen(80);
