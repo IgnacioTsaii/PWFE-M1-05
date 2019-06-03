@@ -1,6 +1,25 @@
 const http = require("http");
 const fs = require("fs");
 const form = require("querystring")
+const loki = require("lokijs")
+
+let noticias = null;
+
+let db = new loki("public/db/noticias.json", {
+	autoload : true,
+	autosave : true,
+	autosaveInterval : 3000,
+	autoloadCallback : function(){
+
+		noticias = db.getCollection("noticias")
+		
+		if( noticias == null){
+
+			noticias = db.addCollection("noticias")
+		}
+	}
+
+})
 
 http.createServer(function(request, response){
 		
@@ -13,12 +32,17 @@ http.createServer(function(request, response){
 			//ACA HAY QUE LEER LOS DATOS QUE MANDO EL FORMULARIO
 
 			request.on("data", function(datos){
+				//captura los datos 
 
-				datos = datos.toString()
+				let noticia = datos.toString()
+				//los convierte en texto y los guarda en la variable  
 
-				datos = form.parse( datos )
+				noticia = form.parse( noticia )
+				//los convierte en obejtos y los guarda en el db
 
-				response.end ( JSON.stringify(datos) )
+				noticias.insert(noticia)
+
+				response.end ("Noticia guarda exitosamente :D")
 			})
 
 			//response.end("Se supone que ya leí los datos ¿?")
